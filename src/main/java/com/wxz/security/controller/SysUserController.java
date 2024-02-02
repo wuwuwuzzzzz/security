@@ -3,9 +3,7 @@ package com.wxz.security.controller;
 import com.wxz.security.entity.SysUser;
 import com.wxz.security.service.SysUserService;
 import jakarta.annotation.Resource;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -29,5 +27,18 @@ public class SysUserController
     public List<SysUser> getList()
     {
         return sysUserService.list();
+    }
+
+    /**
+     * 添加用户
+     *
+     * @param user user
+     * @author wxz
+     * @date 14:53 2024/2/2
+     */
+    @PostMapping("/add")
+    public void add(@RequestBody SysUser user)
+    {
+        sysUserService.saveUserDetails(user);
     }
 }

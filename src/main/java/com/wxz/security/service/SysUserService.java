@@ -9,4 +9,12 @@ import com.wxz.security.entity.SysUser;
  */
 public interface SysUserService extends IService<SysUser>
 {
+    /**
+     * 添加用户
+     *
+     * @param user user
+     * @author wxz
+     * @date 14:54 2024/2/2
+     */
+    void saveUserDetails(SysUser user);
 }
